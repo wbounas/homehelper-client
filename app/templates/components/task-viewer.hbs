@@ -1,26 +1,73 @@
-<p>
-  The task name: {{task.name}}
-  {{#if task.notes}}
-    Task Notes: {{task.notes}}
-  {{/if}}
-  {{#if editing}}
-  {{input value=newNote.notes placeholder='task notes?' enter='save'}}
-  {{/if}}
-</p>
-
+<h2>Task: {{task.name}}</h2>
 <button {{action 'toggleEditing'}}> {{fa-icon 'plus'}} Add Notes </button>
 
-<h2>Responsive collapse (by row)</h2>
+<h3>Task Information</h3>
 <div class="Rtable Rtable--4cols Rtable--collapse">
 
-  <div class="Rtable-cell Rtable-cell--head"><h3>Eddard Stark</h3></div>
-  <div class="Rtable-cell">Has a sword named Ice</div>
-  <div class="Rtable-cell">No direwolf</div>
-  <div class="Rtable-cell Rtable-cell--foot"><strong>Lord of Winterfell</strong></div>
+  <div class="Rtable-cell Rtable-cell--head">
+    <h4>Priority</h4>
+  </div>
+  <div class="Rtable-cell">
+    {{#if task.priority}}
+      {{task.priority}}
+    {{else}}
+      No Priority Established!
+    {{/if}}
+  </div>
+  <div class="Rtable-cell">
+    <h4>Difficulty</h4>
+  </div>
+  <div class="Rtable-cell Rtable-cell--foot">
+    {{#if task.difficulty}}
+      {{task.difficulty}}
+    {{else}}
+      No Difficulty Established!
+    {{/if}}
+  </div>
 
-  <div class="Rtable-cell Rtable-cell--head"><h3>Jon Snow</h3></div>
-  <div class="Rtable-cell">Has a sword named Longclaw</div>
-  <div class="Rtable-cell">Direwolf: Ghost</div>
-  <div class="Rtable-cell Rtable-cell--foot"><strong>Knows nothing</strong></div>
+  <div class="Rtable-cell Rtable-cell--head">
+    <h4>Description</h4>
+  </div>
+  <div class="Rtable-cell">
+    {{#if task.description}}
+      {{task.description}}
+    {{else}}
+      No Description Established!
+    {{/if}}
+  </div>
+  <div class="Rtable-cell">
+    <h4>Estimated Time</h4>
+  </div>
+  <div class="Rtable-cell Rtable-cell--foot">
+    {{#if task.est_time}}
+      {{task.est_time}}
+    {{else}}
+      No Estimated Time Established!
+    {{/if}}
+  </div>
+
+  <div class="Rtable-cell Rtable-cell--head">
+    <h4>Required Tools</h4>
+  </div>
+  <div class="Rtable-cell">
+    {{#if task.req_tools}}
+      {{task.req_tools}}
+    {{else}}
+      No Required Tools Established!
+    {{/if}}
+  </div>
+  <div class="Rtable-cell">
+    <h4>Notes</h4>
+  </div>
+  <div class="Rtable-cell Rtable-cell--foot">
+    {{#if task.notes}}
+      {{task.notes}}
+    {{else}}
+      No Notes Established!
+    {{/if}}
+    {{#if editing}}
+      {{input value=newNote.notes placeholder='put in dang notes' enter='save'}}
+    {{/if}}
+  </div>
 
 </div>

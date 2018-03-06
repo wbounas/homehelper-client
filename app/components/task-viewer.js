@@ -14,6 +14,8 @@ export default Component.extend({
       newThang.task = this.get('task')
       console.log('inside task-viewer save, newThang is:', newThang);
       this.sendAction('saveNotes', newThang)
+      this.toggleProperty('editing')
+      newThang.notes = null
     },
     toggleEditing () {
       this.toggleProperty('editing')
