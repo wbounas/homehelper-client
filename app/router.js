@@ -17,6 +17,7 @@ Router.map(function () {
   this.route('tasks', function() {
     this.route('new');
   });
+  this.route('task', { path: '/tasks/:task_id' });
 });
 
 export default Router;
