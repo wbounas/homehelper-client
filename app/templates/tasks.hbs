@@ -1,10 +1,12 @@
 <h2>Welcome to the tasks/ Route</h2>
 
-<ul>
 {{#each model as |task|}}
-  <li>{{task.name}}</li>
+  <h3>
+    {{#link-to 'task' task}}
+      {{task.name}}
+    {{/link-to}}
+  </h3>
 {{/each}}
-</ul>
 
 {{#link-to "tasks.new"}}
   <button>{{fa-icon "plus"}} Task</button>
