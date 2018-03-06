@@ -1,4 +1,11 @@
 <p>
   The task name: {{task.name}}
+  {{#if task.notes}}
+    Task Notes: {{task.notes}}
+  {{/if}}
+  {{#if editing}}
   {{input value=newNote.notes placeholder='task notes?' enter='save'}}
+  {{/if}}
 </p>
+
+<button {{action 'toggleEditing'}}> {{fa-icon 'plus'}} Add Notes </button>
