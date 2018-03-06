@@ -7,11 +7,16 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function () {
+  // user auth
   this.route('sign-up');
   this.route('sign-in');
   this.route('change-password');
   this.route('users');
-  this.route('tasks');
+
+  // tasks route
+  this.route('tasks', function() {
+    this.route('new');
+  });
 });
 
 export default Router;
