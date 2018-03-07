@@ -6,6 +6,11 @@ export default Route.extend({
     return this.get('store').findRecord('task', id)
   },
   actions: {
+    deleteTask (task) {
+      console.log('does deleteTask work?');
+      return task.destroyRecord()
+        .then(() => this.transitionTo('tasks'))
+    },
     saveNotes (updatedTask) {
       const taskID = updatedTask.task.get('id')
       delete updatedTask.task

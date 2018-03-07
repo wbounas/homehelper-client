@@ -10,6 +10,11 @@ export default Component.extend({
   },
 
   actions: {
+    delete (task) {
+      console.log('does delete work?');
+      console.log('task is', task);
+      this.sendAction('delete', task)
+    },
     save () {
       let setAll = (obj, val) => { return Object.keys(obj).forEach(k => obj[k] = val);}
       let setNull = obj => setAll(obj, null);
