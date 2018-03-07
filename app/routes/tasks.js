@@ -5,6 +5,10 @@ export default Route.extend({
     return this.get('store').findAll('task')
   },
   actions: {
+    toggleComplete (task) {
+      task.toggleProperty('completed')
+      return task.save()
+    },
     move (task) {
       return this.transitionTo('task', task)
     },

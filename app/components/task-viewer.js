@@ -10,6 +10,10 @@ export default Component.extend({
   },
 
   actions: {
+    toggleComplete (task) {
+      task.toggleProperty('completed')
+      return task.save()
+    },
     delete (task) {
       console.log('does delete work?');
       console.log('task is', task);

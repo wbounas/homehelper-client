@@ -6,7 +6,7 @@
       {{task.name}}
     {{/link-to}}
     {{#if task.completed}}
-      {{fa-icon 'badge-check' class='checkmark'}}
+      {{fa-icon 'check' class='checkmark'}}
     {{else}}
       {{fa-icon 'times' class='red-x'}}
     {{/if}}
@@ -16,6 +16,7 @@
     <span {{action 'deleteTask' task}}>
       {{fa-icon 'trash' class='trashcan'}}
     </span>
+    <button {{action 'toggleComplete' task}}>{{fa-icon 'home'}} Complete Task</button>
   </h3>
 {{/each}}
 

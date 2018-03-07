@@ -2,11 +2,12 @@
   <h2>
     Task: {{task.name}}
     {{#if task.completed}}
-      {{fa-icon 'badge-check' class='checkmark'}}
+      {{fa-icon 'check' class='checkmark'}}
     {{else}}
       {{fa-icon 'times' class='red-x'}}
     {{/if}}
     <button {{action 'delete' task}}>{{fa-icon 'trash'}} Delete Task</button>
+    <button {{action 'toggleComplete' task}}>{{fa-icon 'home'}} Complete Task</button>
   </h2>
   <h3>Task Information</h3>
 </div>
