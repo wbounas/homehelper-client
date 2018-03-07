@@ -10,7 +10,7 @@ export default Component.extend({
   },
 
   actions: {
-    save (upTask) {
+    save () {
       let setAll = (obj, val) => { return Object.keys(obj).forEach(k => obj[k] = val);}
       let setNull = obj => setAll(obj, null);
       let delNull = obj => Object.keys(obj).forEach(k => {

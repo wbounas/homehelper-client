@@ -78,6 +78,18 @@ $tableColour: slategrey;
   margin: -$bw 0 0 -$bw;  //border collapse offset
 }
 
+.task-viewer-heading {
+  padding: 20px;
+}
+
+.red-x {
+  color: red;
+}
+
+.checkmark {
+  color: green;
+}
+
 .pencil:hover {
   cursor: pointer;
 }

@@ -1,17 +1,29 @@
-<h2>Task: {{task.name}}</h2>
-<button {{action 'toggleEditing'}}> {{fa-icon 'plus'}} Add Notes </button>
+<div class="task-viewer-heading">
+  <h2>
+    Task: {{task.name}}
+    {{#if task.completed}}
+      {{fa-icon 'check' class='checkmark'}}
+    {{else}}
+      {{fa-icon 'times' class='red-x'}}
+    {{/if}}
+  </h2>
+  <h3>Task Information</h3>
+</div>
 
-<h3>Task Information</h3>
 <div class="Rtable Rtable--4cols Rtable--collapse">
 
   <div class="Rtable-cell Rtable-cell--head">
-    <h4>Priority</h4>
+    <h4>Priority (number)</h4>
   </div>
   <div class="Rtable-cell">
     {{#if task.priority}}
       {{task.priority}}
     {{else}}
       No Priority Established!
+    {{/if}}
+    <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
+    {{#if editing}}
+      {{input value=upTask.priority placeholder='put in dang priority' enter='save' type='number'}}
     {{/if}}
   </div>
   <div class="Rtable-cell">
@@ -22,6 +34,10 @@
       {{task.difficulty}}
     {{else}}
       No Difficulty Established!
+    {{/if}}
+    <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
+    {{#if editing}}
+      {{input value=upTask.difficulty placeholder='put in dang difficulty' enter='save'}}
     {{/if}}
   </div>
 
@@ -34,15 +50,23 @@
     {{else}}
       No Description Established!
     {{/if}}
+    <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
+    {{#if editing}}
+      {{input value=upTask.description placeholder='put in dang description' enter='save'}}
+    {{/if}}
   </div>
   <div class="Rtable-cell">
-    <h4>Estimated Time</h4>
+    <h4>Estimated Time (in minutes)</h4>
   </div>
   <div class="Rtable-cell Rtable-cell--foot">
     {{#if task.est_time}}
       {{task.est_time}}
     {{else}}
       No Estimated Time Established!
+    {{/if}}
+    <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
+    {{#if editing}}
+      {{input value=upTask.est_time placeholder='put in dang est_time' enter='save' type='number'}}
     {{/if}}
   </div>
 
@@ -55,6 +79,7 @@
     {{else}}
       No Required Tools Established!
     {{/if}}
+    <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
     {{#if editing}}
       {{input value=upTask.req_tools placeholder='put in dang tools' enter='save'}}
     {{/if}}
