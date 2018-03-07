@@ -17,7 +17,11 @@ Router.map(function () {
   this.route('tasks', function() {
     this.route('new');
   });
+
+  // task route
   this.route('task', { path: '/tasks/:task_id' });
+
+  // rooms route
   this.route('rooms');
 });
 
