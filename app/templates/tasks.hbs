@@ -4,12 +4,18 @@
   <h3>
     {{#link-to 'task' task}}
       {{task.name}}
-      {{#if task.completed}}
-        {{fa-icon 'badge-check' class='checkmark'}}
-      {{else}}
-        {{fa-icon 'times' class='red-x'}}
-      {{/if}}
     {{/link-to}}
+    {{#if task.completed}}
+      {{fa-icon 'badge-check' class='checkmark'}}
+    {{else}}
+      {{fa-icon 'times' class='red-x'}}
+    {{/if}}
+    <span {{action 'move' task}}>
+      {{fa-icon 'pencil' class='pencil'}}
+    </span>
+    <span {{action 'deleteTask' task}}>
+      {{fa-icon 'trash' class='trashcan'}}
+    </span>
   </h3>
 {{/each}}
 
