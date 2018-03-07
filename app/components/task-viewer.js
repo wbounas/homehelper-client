@@ -16,6 +16,7 @@ export default Component.extend({
       this.sendAction('saveNotes', newThang)
       this.toggleProperty('editing')
       newThang.notes = null
+      newThang.req_tools = null
     },
     toggleEditing () {
       this.toggleProperty('editing')

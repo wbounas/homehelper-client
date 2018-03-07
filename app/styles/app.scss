@@ -78,6 +78,10 @@ $tableColour: slategrey;
   margin: -$bw 0 0 -$bw;  //border collapse offset
 }
 
+.pencil:hover {
+  cursor: pointer;
+}
+
 $breakpoint: 500px;
 
 /* Responsive
