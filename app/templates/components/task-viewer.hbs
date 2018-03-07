@@ -56,7 +56,7 @@
       No Required Tools Established!
     {{/if}}
     {{#if editing}}
-      {{input value=newNote.req_tools placeholder='put in dang tools' enter='save'}}
+      {{input value=upTask.req_tools placeholder='put in dang tools' enter='save'}}
     {{/if}}
   </div>
   <div class="Rtable-cell">
@@ -70,7 +70,7 @@
     {{/if}}
     <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
     {{#if editing}}
-      {{input value=newNote.notes placeholder='put in dang notes' enter='save'}}
+      {{input value=upTask.notes placeholder='put in dang notes' enter='save'}}
     {{/if}}
   </div>
 

@@ -4,19 +4,32 @@ export default Component.extend({
   classNames: ['task-view'],
   editing: false,
 
-  newNote: {
+  upTask: {
+    // dummy: 'something now'
     // new notes will be inserted here
   },
 
   actions: {
-    save () {
-      const newThang = this.get('newNote')
-      newThang.task = this.get('task')
-      console.log('inside task-viewer save, newThang is:', newThang);
-      this.sendAction('saveNotes', newThang)
+    save (upTask) {
+      let setAll = (obj, val) => { return Object.keys(obj).forEach(k => obj[k] = val);}
+      let setNull = obj => setAll(obj, null);
+      let delNull = obj => Object.keys(obj).forEach(k => {
+        if (obj[k] === null) {
+          delete obj[k]
+        }
+      })
+
+      let updatedTask = this.get('upTask')
+      updatedTask.task = this.get('task')
+      console.log('updatedTask.task is:', updatedTask.task);
+      console.log('inside task-viewer save, updatedTask is:', updatedTask);
+      console.log('upTask is:', this.get('upTask'));
+      delNull(this.get('upTask'))
+      this.sendAction('saveNotes', updatedTask)
       this.toggleProperty('editing')
-      newThang.notes = null
-      newThang.req_tools = null
+      updatedTask = {}
+      setNull(this.get('upTask'))
+      delNull(this.get('upTask'))
     },
     toggleEditing () {
       this.toggleProperty('editing')
