@@ -18,6 +18,7 @@ Router.map(function () {
     this.route('new');
   });
   this.route('task', { path: '/tasks/:task_id' });
+  this.route('rooms');
 });
 
 export default Router;
