@@ -7,6 +7,6 @@ export default DS.Model.extend({
   size: DS.attr('number'),
   priority: DS.attr('number'),
   completed: DS.attr('boolean'),
-  tasks: DS.hasMany('task')
+  tasks: DS.hasMany('task'),
   user: DS.belongsTo('user')
 });
