@@ -22,7 +22,9 @@ Router.map(function () {
   this.route('task', { path: '/tasks/:task_id' });
 
   // rooms route
-  this.route('rooms');
+  this.route('rooms', function() {
+    this.route('new');
+  });
 });
 
 export default Router;
