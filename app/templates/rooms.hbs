@@ -2,7 +2,9 @@ Hello from rooms/
 
 {{#each model as |room|}}
   <h3>
-    {{room.name}}
+    {{#link-to 'room' room}}
+      {{room.name}}
+    {{/link-to}}
   </h3>
 {{/each}}
 
