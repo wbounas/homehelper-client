@@ -47,9 +47,10 @@
 
   <div class="Rtable-cell">
     {{#if room.tasks}}
-      asdf
       {{#each room.tasks as |task|}}
-        {{task.name}}
+        {{#link-to 'task' task}}
+          {{task.name}}
+        {{/link-to}}
       {{/each}}
     {{else}}
       No Tasks Established!
