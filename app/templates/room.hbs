@@ -1,3 +1,6 @@
 <h3>Hello from the room route!</h3>
 
-{{model.name}}
+{{room-viewer room=model
+              saveNotes='saveNotesRoom'
+              delete='deleteRoom'
+              toggleComplete='toggleComplete'}}

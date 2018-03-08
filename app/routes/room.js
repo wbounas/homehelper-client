@@ -6,6 +6,10 @@ export default Route.extend({
     return this.get('store').findRecord('room', id)
   },
   actions: {
+    toggleComplete (room) {
+      room.toggleProperty('completed')
+      return room.save()
+    },
     deleteRoom (room) {
       console.log('does deleteRoom work?');
       return room.destroyRecord()
