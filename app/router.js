@@ -25,6 +25,8 @@ Router.map(function () {
   this.route('rooms', function() {
     this.route('new');
   });
+
+  // room route
   this.route('room', { path: '/rooms/:room_id' });
 });
 
