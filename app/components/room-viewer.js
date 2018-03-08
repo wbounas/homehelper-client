@@ -9,6 +9,10 @@ export default Component.extend({
     // new notes will be inserted here
   },
 
+  newTask: {
+    // new task name will be inserted here
+  },
+
   actions: {
     toggleComplete (room) {
       this.sendAction('toggleComplete', room)
@@ -17,6 +21,25 @@ export default Component.extend({
       console.log('does delete work?');
       console.log('room is', room);
       this.sendAction('delete', room)
+    },
+    saveTask (newTask) {
+      const taskName = newTask.get('name');
+      const taskRoom = this.currentModel('room')
+      newTask.room = taskRoom
+      this.get('store').createRecord('task', {})
+        .then(task => {
+          task.setProperties(newTask)
+          task.save()
+          const ok = task
+        })
+
+      console.log('taskRoom is:', taskRoom);
+      this.get('store').findRecord('room', taskRoom)
+        .then((room) => {
+          room.tasks.pushObject(newTask)
+          return newTask.save()
+        })
+        .then(() => this.transitionTo('tasks'));
     },
     save () {
       let setAll = (obj, val) => { return Object.keys(obj).forEach(k => obj[k] = val);}

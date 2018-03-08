@@ -1,18 +1,21 @@
 <div class="task-viewer-heading">
   <h2>
     Room: {{room.name}}
-    {{#if editing}}
-      {{input value=upRoom.name placeholder='change room name' enter='save'}}
-    {{/if}}
-    <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
+    <span class='pencil' {{action 'toggleEditing'}}>
+      {{fa-icon 'pencil'}}
+    </span>
     {{#if room.completed}}
       {{fa-icon 'check' class='checkmark'}}
     {{else}}
       {{fa-icon 'times' class='red-x'}}
-    {{/if}}
+    {{/if}}<br>
+    Room ID: {{room.id}}
+    {{#if editing}}
+      {{input value=upRoom.name placeholder='change room name' enter='save'}}
+    {{/if}}<br>
     <button {{action 'delete' room}}>{{fa-icon 'trash'}} Delete Room</button>
     <button {{action 'toggleComplete' room}}>
-      {{fa-icon 'home'}} Complete Room
+      {{fa-icon 'check'}} Room Complete?
     </button>
   </h2>
   <h3>Room Information</h3>
@@ -71,6 +74,10 @@
     {{else}}
       No Tasks Established!
     {{/if}}
+
+    {{#link-to "tasks.new"}}
+      <button>{{fa-icon "plus"}} Task</button>
+    {{/link-to}}
   </div>
 
 </div>
