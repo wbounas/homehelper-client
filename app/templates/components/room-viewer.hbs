@@ -1,6 +1,10 @@
 <div class="task-viewer-heading">
   <h2>
     Room: {{room.name}}
+    {{#if editing}}
+      {{input value=upRoom.name placeholder='change room name' enter='save'}}
+    {{/if}}
+    <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
     {{#if room.completed}}
       {{fa-icon 'check' class='checkmark'}}
     {{else}}
