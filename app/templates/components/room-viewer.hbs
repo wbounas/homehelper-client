@@ -45,18 +45,28 @@
     {{/if}}
   </div>
 
+  <div class="Rtable-cell Rtable-cell--head">
+    <h4>Tasks for this Room:</h4>
+  </div>
   <div class="Rtable-cell">
     {{#if room.tasks}}
+    <ul>
       {{#each room.tasks as |task|}}
         {{#link-to 'task' task}}
-          {{task.name}}
+          <li>
+            {{task.name}}
+            {{#if task.completed}}
+              {{fa-icon 'check' class='checkmark'}}
+            {{else}}
+              {{fa-icon 'times' class='red-x'}}
+            {{/if}}
+          </li>
         {{/link-to}}
       {{/each}}
+    </ul>
     {{else}}
       No Tasks Established!
     {{/if}}
   </div>
-
-  kk
 
 </div>
