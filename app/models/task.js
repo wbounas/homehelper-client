@@ -9,6 +9,5 @@ export default DS.Model.extend({
   req_tools: DS.attr('string'),
   notes: DS.attr('string'),
   completed: DS.attr('boolean'),
-  room: DS.belongsTo('room'),
-  user: DS.belongsTo('user')
+  room: DS.belongsTo('room')
 });

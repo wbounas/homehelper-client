@@ -30,6 +30,7 @@ export default Component.extend({
 
       let updatedTask = this.get('upTask')
       updatedTask.task = this.get('task')
+      updatedTask.room = this.get('task.room')
       console.log('updatedTask.task is:', updatedTask.task);
       console.log('inside task-viewer save, updatedTask is:', updatedTask);
       console.log('upTask is:', this.get('upTask'));

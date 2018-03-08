@@ -6,6 +6,7 @@ export default Route.extend({
   },
   actions: {
     toggleComplete (task) {
+      console.log('task is:', task);
       task.toggleProperty('completed')
       return task.save()
     },

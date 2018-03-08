@@ -17,7 +17,7 @@ export default Route.extend({
       const clone = Object.assign({}, updatedTask)
       this.get('store').findRecord('task', taskID).then((task) => {
         console.log('taskID is:', taskID);
-        // this is still empty. WHY?
+        console.log('inside taskview task is:', task);
         console.log(`updatedTask is:`, updatedTask);
         console.log(`clone is:`, clone);
         task.setProperties(clone)

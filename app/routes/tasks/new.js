@@ -8,10 +8,18 @@ export default Route.extend({
     save (newTask) {
       console.log('please run save');
       console.log('newTask is:', newTask);
+      const hooray = this.get('currentModel')
+      console.log('hooray is:', hooray);
       const taskName = newTask.get('name');
-      console.log('taskName is:', taskName);
-      return newTask.save()
+      const taskRoom = newTask.get('room_id')
+      this.get('store').findRecord('room', taskRoom)
+        .then((room) => {
+          newTask.set('room', room)
+          return newTask.save()
+        })
         .then(() => this.transitionTo('tasks'));
+      console.log('taskName is:', taskName);
+      console.log('taskRoom is:', taskRoom);
     },
     deleteTask (newTask) {
       console.log('please run deleteTask');
