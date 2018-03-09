@@ -5,14 +5,6 @@ export default Route.extend({
     const id = params.task_id
     return this.get('store').findRecord('task', id)
   },
-  resetController(controller, isExiting) {
-    if (isExiting) {
-      let model = controller.get('model');
-      if (model.get('isNew') && !model.get('isSaving')) {
-        model.deleteRecord();
-      }
-    }
-  },
   actions: {
     deleteTask (task) {
       console.log('does deleteTask work?');
