@@ -1,7 +1,39 @@
 @import "ember-bootstrap/bootstrap";
 
+.app-header {
+  text-align: center;
+  margin: 0 auto;
+}
+
 .task-view {
   border: 1px solid black;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.task-viewer-heading {
+  background: #ccc;
+  padding: 20px;
+}
+
+.room-view {
+  border: 1px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.route-heading {
+  background: #eee;
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  width: fit-content;
+}
+
+.component-wrapper {
+  // something here maybe
 }
 
 /* Variables
@@ -14,7 +46,7 @@ $bw: 3px;  // border width
 .Rtable {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 3em 0;
+  margin: 0;
   padding: 0;
 }
 .Rtable-cell {
@@ -50,6 +82,10 @@ $tableColour: slategrey;
   background-color: mix(white,$tableColour,50%);
   border-color: mix(white,$tableColour,40%);
 }
+.Rtable-cell--medium2 {
+  background-color: lighten(slategrey, 40%);
+  border-color: mix(white,$tableColour,40%);
+}
 .Rtable-cell--light {
   background-color: white;
   border-color: mix(white,$tableColour,80%);
@@ -71,19 +107,13 @@ $tableColour: slategrey;
 /* Apply styles
 ================================== */
 .Rtable {
-  position: relative; top: $bw; left: $bw; //compensate for border offset
+  left: $bw; //compensate for border offset
+  position: relative;
+  top: $bw;
 }
 
 .Rtable-cell > .Rtable-cell--light {
   margin: -$bw 0 0 -$bw;  //border collapse offset
-}
-
-.task-viewer-heading {
-  padding: 20px;
-}
-
-.room-view {
-  border: 1px solid black;
 }
 
 .red-x {

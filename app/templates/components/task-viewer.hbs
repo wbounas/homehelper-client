@@ -1,108 +1,109 @@
-<div class="task-viewer-heading">
-  <h2>
-    Task: {{task.name}}
-    <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
-    {{#if task.completed}}
-      {{fa-icon 'check' class='checkmark'}}
-    {{else}}
-      {{fa-icon 'times' class='red-x'}}
-    {{/if}}<br>
-    {{#if editing}}
-      {{input value=upTask.name placeholder='change task name' enter='save'}}
-    {{/if}}
-    <button {{action 'delete' task}}>{{fa-icon 'trash'}} Delete Task</button>
-    <button {{action 'toggleComplete' task}}>{{fa-icon 'check'}} Task Complete?</button>
-  </h2>
-  <h3>Task Information</h3>
-</div>
-
-<div class="Rtable Rtable--4cols Rtable--collapse">
-
-  <div class="Rtable-cell Rtable-cell--head">
-    <h4>Priority (number)</h4>
-  </div>
-  <div class="Rtable-cell">
-    {{#if task.priority}}
-      {{task.priority}}
-    {{else}}
-      No Priority Established!
-    {{/if}}
-    <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
-    {{#if editing}}
-      {{input value=upTask.priority placeholder='put in dang priority' enter='save' type='number'}}
-    {{/if}}
-  </div>
-  <div class="Rtable-cell">
-    <h4>Difficulty</h4>
-  </div>
-  <div class="Rtable-cell Rtable-cell--foot">
-    {{#if task.difficulty}}
-      {{task.difficulty}}
-    {{else}}
-      No Difficulty Established!
-    {{/if}}
-    <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
-    {{#if editing}}
-      {{input value=upTask.difficulty placeholder='put in dang difficulty' enter='save'}}
-    {{/if}}
+<div class="component-wrapper">
+  <div class="task-viewer-heading">
+    <h2>
+      Task: {{task.name}}
+      <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
+      {{#if task.completed}}
+        {{fa-icon 'check' class='checkmark'}}
+      {{else}}
+        {{fa-icon 'times' class='red-x'}}
+      {{/if}}<br>
+      {{#if editing}}
+        {{input value=upTask.name placeholder='edit task name' enter='save'}}
+      {{/if}}
+      <button {{action 'delete' task}}>{{fa-icon 'trash'}} Delete Task</button>
+      <button {{action 'toggleComplete' task}}>{{fa-icon 'check'}} Task Complete?</button>
+    </h2>
+    <h3>Task Information</h3>
   </div>
 
-  <div class="Rtable-cell Rtable-cell--head">
-    <h4>Description</h4>
-  </div>
-  <div class="Rtable-cell">
-    {{#if task.description}}
-      {{task.description}}
-    {{else}}
-      No Description Established!
-    {{/if}}
-    <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
-    {{#if editing}}
-      {{input value=upTask.description placeholder='put in dang description' enter='save'}}
-    {{/if}}
-  </div>
-  <div class="Rtable-cell">
-    <h4>Estimated Time (in minutes)</h4>
-  </div>
-  <div class="Rtable-cell Rtable-cell--foot">
-    {{#if task.est_time}}
-      {{task.est_time}}
-    {{else}}
-      No Estimated Time Established!
-    {{/if}}
-    <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
-    {{#if editing}}
-      {{input value=upTask.est_time placeholder='put in dang est_time' enter='save' type='number'}}
-    {{/if}}
-  </div>
+  <div class="Rtable Rtable--4cols Rtable--collapse">
 
-  <div class="Rtable-cell Rtable-cell--head">
-    <h4>Required Tools</h4>
-  </div>
-  <div class="Rtable-cell">
-    {{#if task.req_tools}}
-      {{task.req_tools}}
-    {{else}}
-      No Required Tools Established!
-    {{/if}}
-    <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
-    {{#if editing}}
-      {{input value=upTask.req_tools placeholder='put in dang tools' enter='save'}}
-    {{/if}}
-  </div>
-  <div class="Rtable-cell">
-    <h4>Notes</h4>
-  </div>
-  <div class="Rtable-cell Rtable-cell--foot">
-    {{#if task.notes}}
-      {{task.notes}}
-    {{else}}
-      No Notes Established!
-    {{/if}}
-    <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
-    {{#if editing}}
-      {{input value=upTask.notes placeholder='put in dang notes' enter='save'}}
-    {{/if}}
-  </div>
+    <div class="Rtable-cell Rtable-cell--dark Rtable-cell--head">
+      <h4>Priority (number)</h4>
+    </div>
+    <div class="Rtable-cell Rtable-cell--medium">
+      {{#if task.priority}}
+        {{task.priority}}
+      {{else}}
+        No Priority Established!
+      {{/if}}
+      <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
+      {{#if editing}}
+        {{input value=upTask.priority placeholder='edit priority' enter='save' type='number'}}
+      {{/if}}
+    </div>
+    <div class="Rtable-cell Rtable-cell--dark Rtable-cell--dark">
+      <h4>Difficulty</h4>
+    </div>
+    <div class="Rtable-cell Rtable-cell--medium Rtable-cell--foot">
+      {{#if task.difficulty}}
+        {{task.difficulty}}
+      {{else}}
+        No Difficulty Established!
+      {{/if}}
+      <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
+      {{#if editing}}
+        {{input value=upTask.difficulty placeholder='edit difficulty' enter='save'}}
+      {{/if}}
+    </div>
 
+    <div class="Rtable-cell Rtable-cell--dark Rtable-cell--head">
+      <h4>Description</h4>
+    </div>
+    <div class="Rtable-cell Rtable-cell--medium">
+      {{#if task.description}}
+        {{task.description}}
+      {{else}}
+        No Description Established!
+      {{/if}}
+      <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
+      {{#if editing}}
+        {{input value=upTask.description placeholder='edit description' enter='save'}}
+      {{/if}}
+    </div>
+    <div class="Rtable-cell Rtable-cell--dark">
+      <h4>Estimated Time (in minutes)</h4>
+    </div>
+    <div class="Rtable-cell Rtable-cell--medium Rtable-cell--foot">
+      {{#if task.est_time}}
+        {{task.est_time}}
+      {{else}}
+        No Estimated Time Established!
+      {{/if}}
+      <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
+      {{#if editing}}
+        {{input value=upTask.est_time placeholder='edit est_time' enter='save' type='number'}}
+      {{/if}}
+    </div>
+
+    <div class="Rtable-cell Rtable-cell--dark Rtable-cell--head">
+      <h4>Required Tools</h4>
+    </div>
+    <div class="Rtable-cell Rtable-cell--medium">
+      {{#if task.req_tools}}
+        {{task.req_tools}}
+      {{else}}
+        No Required Tools Established!
+      {{/if}}
+      <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
+      {{#if editing}}
+        {{input value=upTask.req_tools placeholder='edit tools' enter='save'}}
+      {{/if}}
+    </div>
+    <div class="Rtable-cell Rtable-cell--dark Rtable-cell--dark">
+      <h4>Notes</h4>
+    </div>
+    <div class="Rtable-cell Rtable-cell--medium Rtable-cell--foot">
+      {{#if task.notes}}
+        {{task.notes}}
+      {{else}}
+        No Notes Established!
+      {{/if}}
+      <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
+      {{#if editing}}
+        {{input value=upTask.notes placeholder='edit notes' enter='save'}}
+      {{/if}}
+    </div>
+  </div>
 </div>
