@@ -4,6 +4,14 @@ export default Route.extend({
   model () {
     return this.get('store').findAll('task')
   },
+  resetController(controller, isExiting) {
+    if (isExiting) {
+      let model = controller.get('model');
+      if (model.get('isNew') && !model.get('isSaving')) {
+        model.deleteRecord();
+      }
+    }
+  },
   actions: {
     toggleComplete (task) {
       console.log('task is:', task);
