@@ -1,7 +1,7 @@
 {
   "name": "homehelper-client",
   "version": "0.0.0",
-  "description": "ember auth template",
+  "description": "homehelper client application",
   "private": true,
   "directories": {
     "doc": "doc",
