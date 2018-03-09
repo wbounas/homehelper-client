@@ -14,7 +14,7 @@ export default Route.extend({
   },
   actions: {
     toggleComplete (task) {
-      console.log('task is:', task);
+      // console.log('task is:', task);
       task.toggleProperty('completed')
       return task.save()
     },
@@ -22,7 +22,7 @@ export default Route.extend({
       return this.transitionTo('task', task)
     },
     deleteTask (task) {
-      console.log('does deleteTask work?');
+      // console.log('does deleteTask work?');
       return task.destroyRecord()
         .then(() => this.transitionTo('tasks'))
     }

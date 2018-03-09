@@ -19,7 +19,7 @@ export default Route.extend({
     save (newRoom) {
       // newRoom is passed in from save action in template
       const roomName = newRoom.get('name');
-      console.log('roomName is:', roomName);
+      // console.log('roomName is:', roomName);
       if (roomName === undefined) {
         this.get('flashMessages')
         .danger('You need to insert a room name.')

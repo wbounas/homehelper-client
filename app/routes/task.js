@@ -7,7 +7,7 @@ export default Route.extend({
   },
   actions: {
     deleteTask (task) {
-      console.log('does deleteTask work?');
+      // console.log('does deleteTask work?');
       return task.destroyRecord()
         .then(() => this.transitionTo('tasks'))
     },
@@ -16,10 +16,10 @@ export default Route.extend({
       delete updatedTask.task
       const clone = Object.assign({}, updatedTask)
       this.get('store').findRecord('task', taskID).then((task) => {
-        console.log('taskID is:', taskID);
-        console.log('inside taskview task is:', task);
-        console.log(`updatedTask is:`, updatedTask);
-        console.log(`clone is:`, clone);
+        // console.log('taskID is:', taskID);
+        // console.log('inside taskview task is:', task);
+        // console.log(`updatedTask is:`, updatedTask);
+        // console.log(`clone is:`, clone);
         task.setProperties(clone)
         task.save()
       })

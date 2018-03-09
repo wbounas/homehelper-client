@@ -17,10 +17,10 @@ export default Route.extend({
   },
   actions: {
     save (newTask) {
-      // console.log('please run save');
-      // console.log('newTask is:', newTask);
+      // // console.log('please run save');
+      // // console.log('newTask is:', newTask);
       // const hooray = this.get('currentModel')
-      // console.log('hooray is:', hooray);
+      // // console.log('hooray is:', hooray);
       const taskName = newTask.get('name');
       const taskRoom = newTask.get('room_id')
       if (taskRoom === undefined) {
@@ -41,14 +41,14 @@ export default Route.extend({
           this.get('flashMessages')
           .danger('There was a problem. Please try again.')
         })
-      // console.log('taskName is:', taskName);
-      // console.log('taskRoom is:', taskRoom);
+      // // console.log('taskName is:', taskName);
+      // // console.log('taskRoom is:', taskRoom);
     },
     deleteTask (newTask) {
-      // console.log('please run deleteTask');
-      // console.log('newTask is:', newTask);
+      // // console.log('please run deleteTask');
+      // // console.log('newTask is:', newTask);
       const taskName = newTask.get('name');
-      // console.log('taskName is:', taskName);
+      // // console.log('taskName is:', taskName);
       return newTask.destroyRecord('task', newTask)
         .then(() => {
           this.get('flashMessages')
