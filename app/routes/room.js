@@ -20,7 +20,14 @@ export default Route.extend({
     },
     deleteRoom (room) {
       console.log('does deleteRoom work?');
+      let tasks = room.hasMany('tasks').value().toArray();
       return room.destroyRecord()
+        .then(() => {
+          tasks.forEach((task) => {
+            console.log('task is:', task);
+            task.unloadRecord()
+          })
+        })
         .then(() => this.transitionTo('rooms'))
     },
     saveNotesRoom (updatedRoom) {
