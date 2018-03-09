@@ -1,6 +1,8 @@
 import Component from '@ember/component';
+import { inject as service } from '@ember/service';
 
 export default Component.extend({
+  flashMessages: service(),
   classNames: ['room-view'],
   editing: false,
 
@@ -18,8 +20,8 @@ export default Component.extend({
       this.sendAction('toggleComplete', room)
     },
     delete (room) {
-      console.log('does delete work?');
-      console.log('room is', room);
+      // // console.log('does delete work?');
+      // // console.log('room is', room);
       this.sendAction('delete', room)
     },
     saveTask (newTask) {
@@ -32,8 +34,16 @@ export default Component.extend({
           task.save()
           const ok = task
         })
+        .then(() => {
+          this.get('flashMessages')
+          .success('Room Edited')
+        })
+        .catch(() => {
+          this.get('flashMessages')
+          .danger('There was a problem. Please try again.')
+        })
 
-      console.log('taskRoom is:', taskRoom);
+      // // console.log('taskRoom is:', taskRoom);
       this.get('store').findRecord('room', taskRoom)
         .then((room) => {
           room.tasks.pushObject(newTask)

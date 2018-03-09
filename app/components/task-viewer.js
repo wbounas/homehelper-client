@@ -15,8 +15,8 @@ export default Component.extend({
       return task.save()
     },
     delete (task) {
-      console.log('does delete work?');
-      console.log('task is', task);
+      // // console.log('does delete work?');
+      // // console.log('task is', task);
       this.sendAction('delete', task)
     },
     save () {
@@ -31,9 +31,9 @@ export default Component.extend({
       let updatedTask = this.get('upTask')
       updatedTask.task = this.get('task')
       updatedTask.room = this.get('task.room')
-      console.log('updatedTask.task is:', updatedTask.task);
-      console.log('inside task-viewer save, updatedTask is:', updatedTask);
-      console.log('upTask is:', this.get('upTask'));
+      // // console.log('updatedTask.task is:', updatedTask.task);
+      // // console.log('inside task-viewer save, updatedTask is:', updatedTask);
+      // // console.log('upTask is:', this.get('upTask'));
       delNull(this.get('upTask'))
       this.sendAction('saveNotes', updatedTask)
       this.toggleProperty('editing')
