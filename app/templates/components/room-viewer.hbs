@@ -1,83 +1,85 @@
-<div class="task-viewer-heading">
-  <h2>
-    Room: {{room.name}}
-    <span class='pencil' {{action 'toggleEditing'}}>
-      {{fa-icon 'pencil'}}
-    </span>
-    {{#if room.completed}}
-      {{fa-icon 'check' class='checkmark'}}
-    {{else}}
-      {{fa-icon 'times' class='red-x'}}
-    {{/if}}<br>
-    Room ID: {{room.id}}
-    {{#if editing}}
-      {{input value=upRoom.name placeholder='edit room name' enter='save'}}
-    {{/if}}<br>
-    <button {{action 'delete' room}}>{{fa-icon 'trash'}} Delete Room</button>
-    <button {{action 'toggleComplete' room}}>
-      {{fa-icon 'check'}} Room Complete?
-    </button>
-  </h2>
-  <h3>Room Information</h3>
-</div>
-
-<div class="Rtable Rtable--4cols Rtable--collapse">
-
-  <div class="Rtable-cell Rtable-cell--dark Rtable-cell--head">
-    <h4>Location</h4>
-  </div>
-  <div class="Rtable-cell Rtable-cell--medium">
-    {{#if room.location}}
-      {{room.location}}
-    {{else}}
-      No Location Established!
-    {{/if}}
-    <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
-    {{#if editing}}
-      {{input value=upRoom.location placeholder='edit location' enter='save'}}
-    {{/if}}
-  </div>
-  <div class="Rtable-cell Rtable-cell--dark Rtable-cell--dark">
-    <h4>Notes</h4>
-  </div>
-  <div class="Rtable-cell Rtable-cell--medium Rtable-cell--foot">
-    {{#if room.notes}}
-      {{room.notes}}
-    {{else}}
-      No Notes Established!
-    {{/if}}
-    <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
-    {{#if editing}}
-      {{input value=upRoom.notes placeholder='edit notes' enter='save'}}
-    {{/if}}
+<div class='comp-wrapper'>
+  <div class="task-viewer-heading">
+    <h2>
+      Room: {{room.name}}
+      <span class='pencil' {{action 'toggleEditing'}}>
+        {{fa-icon 'pencil'}}
+      </span>
+      {{#if room.completed}}
+        {{fa-icon 'check' class='checkmark'}}
+      {{else}}
+        {{fa-icon 'times' class='red-x'}}
+      {{/if}}<br>
+      Room ID: {{room.id}}
+      {{#if editing}}
+        {{input value=upRoom.name placeholder='edit room name' enter='save'}}
+      {{/if}}<br>
+      <button {{action 'delete' room}}>{{fa-icon 'trash'}} Delete Room</button>
+      <button {{action 'toggleComplete' room}}>
+        {{fa-icon 'check'}} Room Complete?
+      </button>
+    </h2>
+    <h3>Room Information</h3>
   </div>
 
-  <div class="Rtable-cell Rtable-cell--highlight Rtable-cell--head">
-    <h4>Tasks for this Room:</h4>
-  </div>
-  <div class="Rtable-cell Rtable-cell--medium2">
-    {{#if room.tasks}}
-    <ul>
-      {{#each room.tasks as |task|}}
-        {{#link-to 'task' task}}
-          <li>
-            {{task.name}}
-            {{#if task.completed}}
-              {{fa-icon 'check' class='checkmark'}}
-            {{else}}
-              {{fa-icon 'times' class='red-x'}}
-            {{/if}}
-          </li>
-        {{/link-to}}
-      {{/each}}
-    </ul>
-    {{else}}
-      No Tasks Established!
-    {{/if}}
+  <div class="Rtable Rtable--4cols Rtable--collapse">
 
-    {{#link-to "tasks.new"}}
-      <button>{{fa-icon "plus"}} Task</button>
-    {{/link-to}}
-  </div>
+    <div class="Rtable-cell Rtable-cell--dark Rtable-cell--head">
+      <h4>Location</h4>
+    </div>
+    <div class="Rtable-cell Rtable-cell--medium">
+      {{#if room.location}}
+        {{room.location}}
+      {{else}}
+        No Location Established!
+      {{/if}}
+      <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
+      {{#if editing}}
+        {{input value=upRoom.location placeholder='edit location' enter='save'}}
+      {{/if}}
+    </div>
+    <div class="Rtable-cell Rtable-cell--dark Rtable-cell--dark">
+      <h4>Notes</h4>
+    </div>
+    <div class="Rtable-cell Rtable-cell--medium Rtable-cell--foot">
+      {{#if room.notes}}
+        {{room.notes}}
+      {{else}}
+        No Notes Established!
+      {{/if}}
+      <span class='pencil' {{action 'toggleEditing'}}>{{fa-icon 'pencil'}}</span>
+      {{#if editing}}
+        {{input value=upRoom.notes placeholder='edit notes' enter='save'}}
+      {{/if}}
+    </div>
 
+    <div class="Rtable-cell Rtable-cell--highlight Rtable-cell--head">
+      <h4 class="big-li">Tasks for this Room:</h4>
+    </div>
+    <div class="Rtable-cell Rtable-cell--medium2">
+      {{#if room.tasks}}
+      <ul>
+        {{#each room.tasks as |task|}}
+          {{#link-to 'task' task}}
+            <li class="big-li">
+              {{task.name}}
+              {{#if task.completed}}
+                {{fa-icon 'check' class='checkmark'}}
+              {{else}}
+                {{fa-icon 'times' class='red-x'}}
+              {{/if}}
+            </li>
+          {{/link-to}}
+        {{/each}}
+      </ul>
+      {{else}}
+        No Tasks Established!
+      {{/if}}
+
+      {{#link-to "tasks.new"}}
+        <button class="med-add-btn">{{fa-icon "plus"}} Task</button>
+      {{/link-to}}
+    </div>
+
+  </div>
 </div>

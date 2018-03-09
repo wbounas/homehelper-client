@@ -1,5 +1,5 @@
-{{input value=model.name}}
+{{input value=model.name placeholder="task name"}}
 {{input value=model.room_id placeholder="room id"}}
-<button {{action 'save' model}}>Save</button>
+<button {{action 'save' model}}> <span class='black-text'>Save</span> </button>
 
-<button {{action 'deleteTask' model}}> Return to Tasks </button>
+<button {{action 'deleteTask' model}}> <span class='black-text'>Return to Tasks</span> </button>
