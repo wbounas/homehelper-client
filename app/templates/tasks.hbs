@@ -1,26 +1,28 @@
 <h2 class='route-heading'>Your Tasks</h2>
 
-{{#each model as |task|}}
-  <h3>
-    {{#link-to 'task' task}}
-      {{task.name}}
-    {{/link-to}}
-    {{#if task.completed}}
-      {{fa-icon 'check' class='checkmark'}}
-    {{else}}
-      {{fa-icon 'times' class='red-x'}}
-    {{/if}}
-    <span {{action 'move' task}}>
-      {{fa-icon 'pencil' class='pencil'}}
-    </span>
-    <span {{action 'deleteTask' task}}>
-      {{fa-icon 'trash' class='trashcan'}}
-    </span>
-  </h3>
-{{/each}}
+<div class='plural-route-wrapper'>
+  {{#each model as |task|}}
+    <h3>
+      {{#link-to 'task' task}}
+        {{task.name}}
+      {{/link-to}}
+      {{#if task.completed}}
+        {{fa-icon 'check' class='checkmark'}}
+      {{else}}
+        {{fa-icon 'times' class='red-x'}}
+      {{/if}}
+      <span {{action 'move' task}}>
+        {{fa-icon 'pencil' class='pencil-black'}}
+      </span>
+      <span {{action 'deleteTask' task}}>
+        {{fa-icon 'trash' class='trashcan-black'}}
+      </span>
+    </h3>
+  {{/each}}
 
-{{#link-to "tasks.new"}}
-  <button>{{fa-icon "plus"}} Task</button>
-{{/link-to}}
+  {{#link-to "tasks.new"}}
+    <button>{{fa-icon "plus"}} Task</button>
+  {{/link-to}}
 
-{{outlet}}
+  {{outlet}}
+</div>

@@ -1,8 +1,24 @@
 @import "ember-bootstrap/bootstrap";
 
+body {
+  background-image: url("/assets/french-chateu.jpg");
+}
+
 .app-header {
+  font-size: 64px;
   text-align: center;
   margin: 0 auto;
+}
+
+.plural-route-wrapper {
+  border: 1px solid black;
+  background: #eee;
+  color: white;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 0 25px 10px 25px;
+  text-align: center;
+  width: fit-content;
 }
 
 .task-view {
@@ -23,7 +39,8 @@
 }
 
 .route-heading {
-  background: #eee;
+  background: lighten(#1e263d, 20%);
+  color: white;
   border: 1px solid black;
   border-radius: 20px;
   margin: 0 auto;
@@ -129,6 +146,22 @@ $tableColour: slategrey;
 }
 
 .pencil:hover {
+  cursor: pointer;
+}
+
+.pencil-black {
+  color: black;
+}
+
+.pencil-black:hover {
+  cursor: pointer;
+}
+
+.trashcan-black {
+  color: black;
+}
+
+.trashcan-black:hover {
   cursor: pointer;
 }
 

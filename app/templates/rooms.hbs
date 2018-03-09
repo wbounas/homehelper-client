@@ -1,15 +1,22 @@
 <h2 class='route-heading'>Your Rooms</h2>
 
-{{#each model as |room|}}
-  <h3>
-    {{#link-to 'room' room}}
-      {{room.name}}
-    {{/link-to}}
-  </h3>
-{{/each}}
+<div class='plural-route-wrapper'>
+  {{#each model as |room|}}
+    <h3>
+      {{#link-to 'room' room}}
+        {{room.name}}
+      {{/link-to}}
+      {{#if room.completed}}
+        {{fa-icon 'check' class='checkmark'}}
+      {{else}}
+        {{fa-icon 'times' class='red-x'}}
+      {{/if}}
+    </h3>
+  {{/each}}
 
-{{#link-to "rooms.new"}}
-  <button>{{fa-icon "plus"}} Room</button>
-{{/link-to}}
+  {{#link-to "rooms.new"}}
+    <button>{{fa-icon "plus"}} Room</button>
+  {{/link-to}}
 
-{{outlet}}
+  {{outlet}}
+</div>
