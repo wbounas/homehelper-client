@@ -1,7 +1,7 @@
 @import "ember-bootstrap/bootstrap";
 
 body {
-  background-image: url("/assets/french-chateu.jpg");
+  background-image: url("../assets/french-chateu.jpg");
 }
 
 .black-text {
@@ -70,7 +70,10 @@ body {
 /* Variables
 ================================== */
 $bw: 3px;  // border width
+$breakpoint: 500px; // breakpoint
 
+// colors
+$tableColour: slategrey;
 
 /* Tables
 ================================== */
@@ -80,6 +83,7 @@ $bw: 3px;  // border width
   margin: 0;
   padding: 0;
 }
+
 .Rtable-cell {
   box-sizing: border-box;
   flex-grow: 1;
@@ -88,47 +92,70 @@ $bw: 3px;  // border width
   overflow: hidden; // Or flex might break
   list-style: none;
   border: solid $bw white;
-  background: fade(slategrey,20%);
-  > h1, > h2, > h3, > h4, > h5, > h6 { margin: 0; }
+  background: fade(slategrey, 20%);
+
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 { margin: 0; }
 }
 
 /* Table column sizing
 ================================== */
-.Rtable--2cols > .Rtable-cell  { width: 50%; }
-.Rtable--3cols > .Rtable-cell  { width: 33.33%; }
-.Rtable--4cols > .Rtable-cell  { width: 25%; }
-.Rtable--5cols > .Rtable-cell  { width: 20%; }
-.Rtable--6cols > .Rtable-cell  { width: 16.6%; }
-
-$tableColour: slategrey;
+.Rtable--2cols > .Rtable-cell { width: 50%; }
+.Rtable--3cols > .Rtable-cell { width: 33.33%; }
+.Rtable--4cols > .Rtable-cell { width: 25%; }
+.Rtable--5cols > .Rtable-cell { width: 20%; }
+.Rtable--6cols > .Rtable-cell { width: 16.6%; }
 
 /* Cell styles
 ================================== */
 .Rtable-cell--dark {
   background-color: slategrey;
-  border-color: darken($tableColour,10%);
-  color: white; > h1, > h2, > h3, > h4, > h5, > h6 { color: white; }
+  border-color: darken($tableColour, 10%);
+  color: white;
+
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 { color: white; }
 }
+
 .Rtable-cell--medium {
-  background-color: mix(white,$tableColour,50%);
-  border-color: mix(white,$tableColour,40%);
+  background-color: mix(white, $tableColour, 50%);
+  border-color: mix(white, $tableColour, 40%);
 }
+
 .Rtable-cell--medium2 {
   background-color: lighten(slategrey, 40%);
-  border-color: mix(white,$tableColour,40%);
+  border-color: mix(white, $tableColour, 40%);
 }
+
 .Rtable-cell--light {
   background-color: white;
-  border-color: mix(white,$tableColour,80%);
+  border-color: mix(white, $tableColour, 80%);
 }
+
 .Rtable-cell--highlight {
   background-color: lightgreen;
-  border-color: darken(lightgreen,10%);
+  border-color: darken(lightgreen, 10%);
 }
+
 .Rtable-cell--alert {
   background-color: darkorange;
-  border-color: darken(darkorange,10%);
-  color: white; > h1, > h2, > h3, > h4, > h5, > h6 { color: white; }
+  border-color: darken(darkorange, 10%);
+  color: white;
+
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 { color: white; }
 }
 
 // Inherit header and footer styles
@@ -178,8 +205,6 @@ $tableColour: slategrey;
 .trashcan-black:hover {
   cursor: pointer;
 }
-
-$breakpoint: 500px;
 
 /* Responsive
 ==================================== */
