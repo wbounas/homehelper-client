@@ -1,8 +1,10 @@
 <h2>Users</h2>
 
-<ol>
-  {{!-- {{render-all-users users=model}} --}}
-  {{#each model as |user|}}
-    <li>{{user.email}}</li>
-  {{/each}}
-</ol>
+<div class='users-container'>
+  <ol>
+    {{!-- {{render-all-users users=model}} --}}
+    {{#each model as |user|}}
+      <li>{{user.email}}</li>
+    {{/each}}
+  </ol>
+</div>

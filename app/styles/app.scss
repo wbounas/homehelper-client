@@ -26,6 +26,15 @@ body {
   margin: 0 auto;
 }
 
+.users-container {
+  border: 1px solid black;
+  border-radius: 20px;
+  background: #eee;
+  overflow: hidden;
+  padding: 12px 25px 0 0;
+  width: fit-content;
+}
+
 .plural-route-wrapper {
   border: 1px solid black;
   border-radius: 30px;
