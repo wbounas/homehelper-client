@@ -1,23 +1,17 @@
 @import "ember-bootstrap/bootstrap";
 
+/* Variables
+================================== */
+$bw: 3px;  // border width
+$breakpoint: 500px; // breakpoint
+
+// colors
+$tableColour: slategrey;
+
+/* Tweaks and Adjustments
+==================================== */
 body {
   background-image: url("../assets/french-chateu.jpg");
-}
-
-.black-text {
-  color: black;
-}
-
-.big-li {
-  font-size: 33px;
-}
-
-.comp-wrapper {
-  margin-bottom: 80px;
-}
-
-.med-add-btn {
-  font-size: 22px;
 }
 
 .app-header {
@@ -26,13 +20,20 @@ body {
   margin: 0 auto;
 }
 
-.users-container {
-  border: 1px solid black;
-  border-radius: 20px;
-  background: #eee;
-  overflow: hidden;
-  padding: 12px 25px 0 0;
-  width: fit-content;
+.big-li {
+  font-size: 33px;
+}
+
+.black-text {
+  color: black;
+}
+
+.comp-wrapper {
+  margin-bottom: 80px;
+}
+
+.med-add-btn {
+  font-size: 22px;
 }
 
 .plural-route-wrapper {
@@ -76,13 +77,14 @@ body {
   width: fit-content;
 }
 
-/* Variables
-================================== */
-$bw: 3px;  // border width
-$breakpoint: 500px; // breakpoint
-
-// colors
-$tableColour: slategrey;
+.users-container {
+  border: 1px solid black;
+  border-radius: 20px;
+  background: #eee;
+  overflow: hidden;
+  padding: 12px 25px 0 0;
+  width: fit-content;
+}
 
 /* Tables
 ================================== */
