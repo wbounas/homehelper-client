@@ -14,6 +14,8 @@ Ember.JS, JavaScript, AJAX, HTMLbars, HTML5, CSS3 + Sass
 [Deployed API](https://homehelper-api.herokuapp.com)
 | [GitHub API Repo](https://github.com/wbounas/homehelper-client)
 
+![app-screenshot](planning/app-screen-1.png)
+
 ### About
 Home*Helper* is a web application that helps users organize the tasks they need to complete in order to have the home they truly deserve! The basis of the idea came from both my growth as a web developer, and also my personal need for organizing my home. While at first the task seems insurmountable, it starts to become more achievable as you break down the ultimate goal into smaller, more reachable goals that you can accomplish one by one.
 
