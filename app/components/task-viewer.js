@@ -11,15 +11,16 @@ export default Component.extend({
 
   actions: {
     toggleComplete (task) {
+      // toggle 'completed' property, and persist change to D-S and DB
       task.toggleProperty('completed')
       return task.save()
     },
     delete (task) {
-      // // console.log('does delete work?');
-      // // console.log('task is', task);
+      // sends `delete` action up to `task` route handler
       this.sendAction('delete', task)
     },
     save () {
+      // functions to transform an object's keys
       let setAll = (obj, val) => { return Object.keys(obj).forEach(k => obj[k] = val);}
       let setNull = obj => setAll(obj, null);
       let delNull = obj => Object.keys(obj).forEach(k => {
@@ -28,13 +29,15 @@ export default Component.extend({
         }
       })
 
+      // grab modified keys inside of `upTask`
       let updatedTask = this.get('upTask')
+      // assign the current task to `updatedTask`
       updatedTask.task = this.get('task')
+      // assign the current room to `updatedTask`
       updatedTask.room = this.get('task.room')
-      // // console.log('updatedTask.task is:', updatedTask.task);
-      // // console.log('inside task-viewer save, updatedTask is:', updatedTask);
-      // // console.log('upTask is:', this.get('upTask'));
+      // delete any null keys inside of upTask
       delNull(this.get('upTask'))
+      // send `updatedTask` up to route-handler
       this.sendAction('saveNotes', updatedTask)
       this.toggleProperty('editing')
       updatedTask = {}

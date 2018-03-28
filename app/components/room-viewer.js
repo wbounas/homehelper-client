@@ -20,8 +20,6 @@ export default Component.extend({
       this.sendAction('toggleComplete', room)
     },
     delete (room) {
-      // // console.log('does delete work?');
-      // // console.log('room is', room);
       this.sendAction('delete', room)
     },
     saveTask (newTask) {
@@ -43,7 +41,6 @@ export default Component.extend({
           .danger('There was a problem. Please try again.')
         })
 
-      // // console.log('taskRoom is:', taskRoom);
       this.get('store').findRecord('room', taskRoom)
         .then((room) => {
           room.tasks.pushObject(newTask)
@@ -52,6 +49,7 @@ export default Component.extend({
         .then(() => this.transitionTo('tasks'));
     },
     save () {
+      // functions to transform an object's keys
       let setAll = (obj, val) => { return Object.keys(obj).forEach(k => obj[k] = val);}
       let setNull = obj => setAll(obj, null);
       let delNull = obj => Object.keys(obj).forEach(k => {
